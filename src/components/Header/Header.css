@@ -1,0 +1,16 @@
+.mainheader{
+    font-weight: bold;
+    font-size: larger;
+    height:3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(150, 179, 212);
+}
+
+.mainnav a{
+    margin: 1em;
+    color: rgb(0, 0, 0);
+    font-style: normal;
+    text-decoration: none;
+}
