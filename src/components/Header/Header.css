@@ -1,16 +1,21 @@
 .mainheader{
     font-weight: bold;
-    font-size: larger;
+    font-size:x-large;
     height:3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:rgb(150, 179, 212);
+    background-color:rgb(255, 255, 255);
+    border-bottom: 1px solid black;
 }
 
 .mainnav a{
     margin: 1em;
-    color: rgb(0, 0, 0);
+    color: rgb(65, 55, 55);
     font-style: normal;
     text-decoration: none;
+}
+
+.mainnav a:hover{
+    font-style: oblique;
 }

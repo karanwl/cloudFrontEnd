@@ -1,4 +1,29 @@
 .main{
-    display:flex;
-    justify-content: center;
+    text-align: center;
+}
+
+.content{
+    width: 100%;
+}
+
+.content h1{
+    font-size:3.5em;
+
+}
+
+.bodyButton{
+    height: 2rem;
+    background-color:rgb(48, 45, 45);
+    color: white;
+    margin: 2em;
+    border-radius: 12px;
+    padding: 2%;
+    font-size: 130%;
+    text-decoration: none;
+}
+
+.bodyButton:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid red;
 }

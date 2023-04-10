@@ -1,8 +1,8 @@
 export default function Login() {
   return (
-    <div class="content">
+    <div className="content">
       <form>
-        <div class="form-group">
+        <div>
           <label for="exampleInputEmail1">Email address</label>
           <input
             type="email"
@@ -11,11 +11,8 @@ export default function Login() {
             aria-describedby="emailHelp"
             placeholder="Enter email"
           />
-          <small id="emailHelp" class="form-text text-muted">
-            We'll never share your email with anyone else.
-          </small>
         </div>
-        <div class="form-group">
+        <div>
           <label for="exampleInputPassword1">Password</label>
           <input
             type="password"
@@ -24,13 +21,7 @@ export default function Login() {
             placeholder="Password"
           />
         </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">
-            Check me out
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit">
           Submit
         </button>
       </form>
