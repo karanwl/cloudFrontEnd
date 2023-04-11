@@ -1,0 +1,39 @@
+{
+    "status": "ok",
+    "msg": "Leads Listing Successful!",
+    "leads_obj": [
+        {
+            "id": "3",
+            "username": "ronald",
+            "person_name": "TEST2",
+            "company_name": "TEST2",
+            "company_website": "www.google2.com",
+            "company_address": "801 Lawrence",
+            "telephone_numbers": "+156487879645",
+            "email_address": "ronaldsaenz88@gmail.com",
+            "pathfile": "image2.jpg"
+        },
+        {
+            "id": "2",
+            "username": "ronald",
+            "person_name": "TEST1",
+            "company_name": "TEST1",
+            "company_website": "www.google.com",
+            "company_address": "800 Lawrence",
+            "telephone_numbers": "+156487879646",
+            "email_address": "ronaldsaenz88@gmail.com",
+            "pathfile": "image1.jpg"
+        },
+        {
+            "id": "1",
+            "username": "",
+            "person_name": "TEST1",
+            "company_name": "TEST1",
+            "company_website": "",
+            "company_address": "",
+            "telephone_numbers": "",
+            "email_address": "",
+            "pathfile": ""
+        }
+    ]
+}
