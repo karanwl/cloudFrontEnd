@@ -1,4 +1,31 @@
-.content{
-    position:absolute;
-    margin-top: 60px;
+.leads-content{
+    position: absolute;
+    margin: 49px;
+    /* text-align: center; */
 }
+
+.body-button {
+    background-color: rgb(48, 45, 45);
+    color: white;
+
+    border-radius: 12px;
+
+    padding: 2%;
+
+    font-size: 0.8rem;
+
+    text-decoration: none;
+  }
+  
+  .body-button:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid red;
+  }
+
+  table, th, td{
+    text-align: center;
+    margin-top: 60px;
+    border:1px solid black;
+    border-collapse: collapse;
+  }

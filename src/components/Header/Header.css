@@ -1,12 +1,20 @@
 .mainheader{
+    position: fixed;
+    top: 0;
+    left: 0;
+
     font-weight: bold;
     font-size:x-large;
     height:3rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    
     background-color:rgb(255, 255, 255);
     border-bottom: 1px solid black;
+    z-index: 1;
+    width: 100%;
 }
 
 .mainnav a{

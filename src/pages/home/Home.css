@@ -1,29 +1,32 @@
-.main{
-    text-align: center;
+.home-content {
+  position: absolute;
+
+  text-align: center;
+  width: 700px;
+
+  top:40%;
+  left: 50%;
+
+  transform: translate(-50%,-50%);
+
 }
 
-.content{
-    width: 100%;
+.home-content h1 {
+  font-size: 3.5rem;
 }
 
-.content h1{
-    font-size:3.5em;
-
+.home-button {
+  background-color: rgb(48, 45, 45);
+  color: white;
+  margin: 2em;
+  border-radius: 12px;
+  padding: 2%;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 
-.bodyButton{
-    height: 2rem;
-    background-color:rgb(48, 45, 45);
-    color: white;
-    margin: 2em;
-    border-radius: 12px;
-    padding: 2%;
-    font-size: 130%;
-    text-decoration: none;
-}
-
-.bodyButton:hover{
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border: 1px solid red;
+.home-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 1px solid red;
 }

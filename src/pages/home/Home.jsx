@@ -1,12 +1,17 @@
 import "./Home.css";
+
+let name = "karan"
+
 export default function Home() {
   return (
-    <div className="main">
-      <div className="content">
-        <h1>Hello, name !</h1>
-        <a href="/addlead" className="bodyButton">Add new Lead</a>
-        <a href="/viewlead" className="bodyButton">View Lead List</a>
-      </div>
+    <div className="home-content">
+      <h1>Hello, {name} !</h1>
+      <a href="/addlead" className="home-button">
+        Add new Lead
+      </a>
+      <a href="/viewlead" className="home-button">
+        View Lead List
+      </a>
     </div>
   );
 }
