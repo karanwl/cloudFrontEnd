@@ -2,7 +2,15 @@ import React,{useState,useEffect} from 'react';
 import "./Leads.css";
 
 export default function Leads() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const username = localStorage.getItem("username");
   
+  if (isLoggedIn === false || isLoggedIn === null || username === null) {
+    //alert("Invalid username or password.");
+    // redirect to home page or some other authorized page
+    window.location.href = "/";
+  }
+
   const [leads, setLeads] = useState([]);
 
   useEffect(() => {
@@ -44,8 +52,16 @@ export default function Leads() {
                   <td>{lead.username}</td>
                   <td>
                     <a href={`/viewlead/${lead.id}`}>View</a>
-                    <a href={`/editlead/${lead.id}`}>Edit</a>
-                    <a href={`/deletelead/${lead.id}`}>Delete</a>
+                    <br/>
+
+                    {isLoggedIn && username === lead.username ? (
+                      <a href={`/editlead/${lead.id}`}>Edit</a>
+                    ) : null}
+                    <br/>
+
+                    {isLoggedIn && username === lead.username ? (
+                      <a href={`/deletelead/${lead.id}`}>Delete</a>
+                    ) : null}
                   </td>
                 </tr>
               ))}

@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 import "./Login.css";
 
 export default function Login() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const usernameSession = localStorage.getItem("username");
+  
+  if (isLoggedIn && usernameSession !== null) {
+    // redirect to home page or some other authorized page
+    window.location.href = "/";
+  }
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -45,7 +53,6 @@ export default function Login() {
         <h1>Login : </h1>
         <form className="form justify-content-center" onSubmit={handleLogin}>
           <div>
-            {/* <label for="username">Username : </label> */}
             <label for="username">Username : </label>
             <input
               type="username"
@@ -58,7 +65,6 @@ export default function Login() {
             />
           </div>
           <div>
-            {/* <label for="password">Password : </label> */}
             <label for="password">Password : </label>
             <input
               type="password"

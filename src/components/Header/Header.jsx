@@ -1,13 +1,25 @@
 import "./Header.css";
 
 export default function Header() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const username = localStorage.getItem("username");
+
   return (
     <div className="mainheader">
       <nav className="mainnav">
         <a href="/">Home</a>
-        <a href="/leads">Leads</a>
-        <a href="/editlead">Edit Lead</a>
-        <a href="/login">Logout</a>
+
+        {isLoggedIn ? (
+          <a href="/leads">Leads</a>
+        ) : null}
+
+        {isLoggedIn ? (
+          <a href="/addlead">Add Lead</a>
+        ) : null}
+
+        {isLoggedIn ? (
+          <a href="/logout">Logout</a>
+        ) : null}
       </nav>
     </div>
   );
