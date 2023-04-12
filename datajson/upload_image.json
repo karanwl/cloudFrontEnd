@@ -1,0 +1,8 @@
+{
+    "status": "ok",
+    "msg": "Image Upload Successful!",
+    "image_obj": {
+    	"fileUrl": "http://contentcen301218602.aws.ai.s3.amazonaws.com/032-2.jpg",
+    	"fileId": "032-2.jpg"
+    }
+}

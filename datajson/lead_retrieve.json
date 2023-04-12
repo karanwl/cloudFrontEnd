@@ -1,0 +1,15 @@
+{
+    "status": "ok",
+    "msg": "Lead Retrieval Successful!",
+    "lead_obj": {
+        "id": "2",
+        "username": "ronald",
+        "person_name": "TEST1",
+        "company_name": "TEST1",
+        "company_website": "www.google.com",
+        "company_address": "800 Lawrence",
+        "telephone_numbers": "+156487879646",
+        "email_address": "ronaldsaenz88@gmail.com",
+        "pathfile": "image1.jpg"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "status": "ok",
+    "msg": "Text Extract / Label Successful!",
+    "business_card_obj":
+    {
+        "extracted":
+        {
+            "pathfile":"032-2.jpg",
+            "person_name":"Kartikey Karoth",
+            "email_address":"kartik@saathiva.com",
+            "company_name":"",
+            "company_website":"",
+            "company_address":"",
+            "telephone_numbers":["+41 (0) 79 821 20 01"]
+        }
+    }
+}
