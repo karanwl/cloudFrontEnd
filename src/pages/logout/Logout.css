@@ -1,0 +1,37 @@
+.logincontent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.logincontent h1{
+    text-align: center;
+} 
+
+.logincontent button{
+    font-size: x-large;
+    height: 3rem;
+    width: 10rem;
+    background-color: rgb(48, 45, 45);
+    color: white;
+    margin: 2em;
+    border-radius: 12px;
+    padding: 2%;
+    font-size: 80%;
+    text-decoration: none;
+}
+
+.logincontent button:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid red;
+  }
+
+.forminput{
+    width: 200px;
+    height: 40px;
+    font-size: large;
+    margin: 10px;
+}

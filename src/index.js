@@ -9,6 +9,7 @@ import AddLead from "./pages/addLead/AddLead";
 import ViewLead from "./pages/viewLead/ViewLead";
 import EditLead from "./pages/editLead/EditLead";
 import Login from "./pages/login/Login";
+import Logout from "./pages/logout/Logout";
 
 import { createBrowserRouter , RouterProvider } from "react-router-dom";
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/logout",
+    element: <Logout />,
   },
   {
     path: "/addlead",

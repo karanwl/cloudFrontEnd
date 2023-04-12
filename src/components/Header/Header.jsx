@@ -2,7 +2,7 @@ import "./Header.css";
 
 export default function Header() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const username = localStorage.getItem("username");
+  const usernameSession = localStorage.getItem("username");
 
   return (
     <div className="mainheader">

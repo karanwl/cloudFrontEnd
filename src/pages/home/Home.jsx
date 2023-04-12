@@ -2,12 +2,12 @@ import "./Home.css";
 
 export default function Home() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const username = localStorage.getItem("username");
+  const usernameSession = localStorage.getItem("username");
 
   return (
     <div className="home-content">
       {isLoggedIn ? (
-        <h1>Hello, {username} !</h1>
+        <h1>Hello, {usernameSession} !</h1>
       ) : (
         <h1>Please log in.</h1>
       )}

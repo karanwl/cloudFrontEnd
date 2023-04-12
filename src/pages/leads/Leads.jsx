@@ -3,9 +3,9 @@ import "./Leads.css";
 
 export default function Leads() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const username = localStorage.getItem("username");
+  const usernameSession = localStorage.getItem("username");
   
-  if (isLoggedIn === false || isLoggedIn === null || username === null) {
+  if (isLoggedIn === false || isLoggedIn === null || usernameSession === null) {
     //alert("Invalid username or password.");
     // redirect to home page or some other authorized page
     window.location.href = "/";
@@ -54,12 +54,12 @@ export default function Leads() {
                     <a href={`/viewlead/${lead.id}`}>View</a>
                     <br/>
 
-                    {isLoggedIn && username === lead.username ? (
+                    {isLoggedIn && usernameSession === lead.username ? (
                       <a href={`/editlead/${lead.id}`}>Edit</a>
                     ) : null}
                     <br/>
 
-                    {isLoggedIn && username === lead.username ? (
+                    {isLoggedIn && usernameSession === lead.username ? (
                       <a href={`/deletelead/${lead.id}`}>Delete</a>
                     ) : null}
                   </td>
