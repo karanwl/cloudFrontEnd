@@ -11,8 +11,32 @@ export default function AddLead(){
     }
 
     return(
-        <div class="addleadcontent">
-            <p>Add Lead page</p>
-        </div>
+        <form>
+  <label>
+    Company Name:
+    <input type="text" name="compName" />
+  </label>
+  <label>
+    Person Name:
+    <input type="text" name="personName" />
+  </label>
+  <label>
+    Company Website:
+    <input type="text" name="companyWebsite" />
+  </label>
+  <label>
+    Company Address:
+    <input type="text" name="address" />
+  </label>
+  <label>
+    Email:
+    <input type="email" name="email" />
+  </label>
+  <label>
+    Phone Number:
+    <input type="number" name="phoneNumber" />
+  </label>
+  <input type="submit" value="Submit" />
+</form>
     )
 };
