@@ -14,3 +14,10 @@
 .wrapper fieldset {
     margin: 20px 0;
 }
+.input{
+    margin: 5px;
+    float:right;
+}
+.label{
+    margin: 5px;
+}

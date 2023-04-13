@@ -11,34 +11,38 @@ export default function AddLead(){
     }
 
     return(
-      <div className="wrapper">
+      <div className="addleadcontent">
       <div className="form">
-        <form >
+        <form aria-orientation="vertical">
           <fieldset>
+            <div>
           <label>
             Company Name:
             <input type="text" name="compName" />
           </label>
+          </div>
+          <div>
           <label>
             Person Name:
               <input type="text" name="personName" />
-          </label>
-          <label>
+              </label></div>
+          <div><label>
             Company Website:
             <input type="text" name="companyWebsite" />
-          </label>
-          <label>
+          </label></div>
+          <div><label>
             Company Address:
           <input type="text" name="address" />
-          </label>
-          <label>
+          </label></div>
+          <div><label>
             Email:
             <input type="email" name="email" />
-           </label>
-          <label>
+            </label></div>
+          <div><label>
             Phone Number:
             <input type="number" name="phoneNumber" />
-          </label> 
+            </label></div>
+          
           </fieldset>
             <input type="submit" value="Submit" />
            
