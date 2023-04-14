@@ -12,7 +12,8 @@
 }
 
 .wrapper fieldset {
-    margin: 20px 0;
+    margin: 20px ;
+    float: right;
 }
 .input{
     margin: 5px;

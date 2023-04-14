@@ -13,7 +13,7 @@ export default function AddLead(){
     return(
       <div className="addleadcontent">
       <div className="form">
-        <form aria-orientation="vertical">
+        <form>
           <fieldset>
             <div>
           <label>
