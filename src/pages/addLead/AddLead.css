@@ -10,6 +10,13 @@
     position:absolute;
     
 }
+label{
+    padding: 5 px;
+    margin: 5px;
+}
+button{
+    margin: 5px;
+}
 
 .wrapper fieldset {
     margin: 20px ;
