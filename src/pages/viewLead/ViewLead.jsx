@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import "./ViewLead.css"
 
-export default function ViewLead(id){
+export default function ViewLead({ id }){
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const usernameSession = localStorage.getItem("username");
     
@@ -10,15 +10,21 @@ export default function ViewLead(id){
         // redirect to home page or some other authorized page
         window.location.href = "/";
     }
-    
+
     const [dataJson, setDataJson] = useState([]);
 
     useEffect(() => {
-        fetch("https://j0dvgoy2ze.execute-api.us-east-1.amazonaws.com/api/v1/leads/" + id.id)
-            .then((response) => response.json())
-            .then((data) => setDataJson(data.lead_obj));
+        async function fetchData() {
+            try {
+                const response = await fetch(`https://j0dvgoy2ze.execute-api.us-east-1.amazonaws.com/api/v1/leads/${id}`);
+                const data = await response.json();
+                setDataJson(data.lead_obj);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchData();
     }, [id]);
-
 
     return(
         <div className='viewlead-container'>
