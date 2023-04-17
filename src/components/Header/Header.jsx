@@ -3,7 +3,8 @@ import "./Header.css";
 export default function Header() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   const usernameSession = localStorage.getItem("username");
-
+  const isAdmin = localStorage.getItem("isAdmin");
+  
   return (
     <div className="mainheader">
       <nav className="mainnav">
@@ -15,6 +16,10 @@ export default function Header() {
 
         {isLoggedIn ? (
           <a href="/addlead">Add Lead</a>
+        ) : null}
+
+        {isLoggedIn && isAdmin ? (
+          <a href="/signup">Create Account</a>
         ) : null}
 
         {isLoggedIn ? (

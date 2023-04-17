@@ -10,6 +10,7 @@ import ViewLead from "./pages/viewLead/ViewLead";
 import EditLead from "./pages/editLead/EditLead";
 import Login from "./pages/login/Login";
 import Logout from "./pages/logout/Logout";
+import SignUp from "./pages/signup/SignUp";
 
 import { createBrowserRouter , RouterProvider } from "react-router-dom";
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/editlead",
     element: <EditLead />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
   },
   {
     path: "/viewlead",
