@@ -1,53 +1,52 @@
 import "./AddLead.css"
 
 export default function AddLead(){
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const usernameSession = localStorage.getItem("username");
-    
-    if (isLoggedIn === false || isLoggedIn === null || usernameSession === null) {
-      //alert("Invalid username or password.");
-      // redirect to home page or some other authorized page
-      window.location.href = "/";
-    }
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const usernameSession = localStorage.getItem("username");
+  
+  if (isLoggedIn === false || isLoggedIn === null || usernameSession === null) {
+    //alert("Invalid username or password.");
+    // redirect to home page or some other authorized page
+    window.location.href = "/";
+  }
 
-    return(
-      <div className="addleadcontent">
+  return(
+    <div className="addleadcontent">
       <div className="form">
-        <form>
+        <form className="form justify-content-center" >
           <fieldset>
-            <div>
-          <label>
-            Company Name:
-            <input type="text" name="compName" />
-          </label>
-          </div>
-          <div>
-          <label>
-            Person Name:
-              <input type="text" name="personName" />
-              </label></div>
-          <div><label>
-            Company Website:
-            <input type="text" name="companyWebsite" />
-          </label></div>
-          <div><label>
-            Company Address:
-          <input type="text" name="address" />
-          </label></div>
-          <div><label>
-            Email:
-            <input type="email" name="email" />
-            </label></div>
-          <div><label>
-            Phone Number:
-            <input type="number" name="phoneNumber" />
-            </label></div>
-          
+            <div className="form-body">
+              <div>
+                <label className="form__label" for="compName">Company Name:</label>
+                <input type="text" className="form_input" name="compName" placeholder="Insert Company Name" />
+              </div>
+              <div>
+                <label className="form__label" for="personName">Person Name:</label>
+                <input type="text" className="form_input" name="personName" placeholder="Insert Person Name" />
+              </div>
+              <div>
+                <label className="form__label" for="companyWebsite">Company Website:</label>
+                <input type="text" className="form_input" name="companyWebsite" placeholder="Insert Company Website" />
+              </div>
+              <div>
+                <label className="form__label" for="address">Company Address:</label>
+                <input type="text" className="form_input" name="address" placeholder="Insert Address" />
+              </div>
+              <div>
+                <label className="form__label" for="email">Email:</label>
+                <input type="email" className="form_input" name="email" placeholder="Insert Email" />
+              </div>
+              <div>
+                <label className="form__label" for="phoneNumber">Phone Numbers:</label>
+                <input type="text" className="form_input" name="phoneNumber" placeholder="Insert Phone Numbers" />
+              </div>
+            </div>
+            <div class="footer">
+              <button type="submit" class="btn">Submit</button>
+            </div>
           </fieldset>
-            <input type="submit" value="Submit" />
-           
         </form>
-</div>
-</div>
-    )
+      </div>
+    </div>
+  )
 };

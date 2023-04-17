@@ -15,17 +15,17 @@
     font-size: 0.8rem;
 
     text-decoration: none;
-  }
+}
   
-  .body-button:hover {
+.body-button:hover {
     background-color: rgb(255, 255, 255);
     color: black;
     border: 1px solid red;
-  }
+}
 
-  table, th, td{
+table, th, td{
     text-align: center;
     margin-top: 60px;
     border:1px solid black;
     border-collapse: collapse;
-  }
+}

@@ -1,32 +1,31 @@
 .home-content {
-  position: absolute;
+    position: absolute;
 
-  text-align: center;
-  width: 700px;
+    text-align: center;
+    width: 700px;
 
-  top:40%;
-  left: 50%;
+    top:40%;
+    left: 50%;
 
-  transform: translate(-50%,-50%);
-
+    transform: translate(-50%,-50%);
 }
 
 .home-content h1 {
-  font-size: 3.5rem;
+    font-size: 3.5rem;
 }
 
 .home-button {
-  background-color: rgb(48, 45, 45);
-  color: white;
-  margin: 2em;
-  border-radius: 12px;
-  padding: 2%;
-  font-size: 1.5rem;
-  text-decoration: none;
+    background-color: rgb(48, 45, 45);
+    color: white;
+    margin: 2em;
+    border-radius: 12px;
+    padding: 2%;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
 
 .home-button:hover {
-  background-color: rgb(255, 255, 255);
-  color: black;
-  border: 1px solid red;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid red;
 }
