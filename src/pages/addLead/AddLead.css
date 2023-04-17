@@ -29,3 +29,58 @@ button{
 .label{
     margin: 5px;
 }
+
+
+.addleadcontent h1{
+    text-align: center;
+} 
+
+.addleadcontent button{
+    font-size: x-large;
+    height: 3rem;
+    width: 10rem;
+    background-color: rgb(48, 45, 45);
+    color: white;
+    margin: 2em;
+    border-radius: 12px;
+    padding: 2%;
+    font-size: 80%;
+    text-decoration: none;
+}
+
+.addleadcontent button:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid red;
+}
+
+.addleadcontent form{
+    background-color: white;
+    border-radius: 5px;
+    width: 550px;
+    /* height: 600px; */
+}
+
+.form-body{
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.form-body > *{
+    padding: 5px;
+}
+
+.form__label{
+    width: 40%;
+}
+
+.form_input{
+    width: 60%;
+    height: 40px;
+    font-size: large;
+    margin: 10px;
+}
+
+.footer{
+    text-align: center;
+}

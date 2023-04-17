@@ -25,7 +25,7 @@ export default function Leads() {
   const [leads, setLeads] = useState([]);
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/karanwl/cloudFrontEnd/main/datajson/leads.json")
+    fetch("https://j0dvgoy2ze.execute-api.us-east-1.amazonaws.com/api/v1/leads")
       .then((response) => response.json())
       .then((data) => setLeads(data.leads_obj));
   }, []);
@@ -91,20 +91,20 @@ export default function Leads() {
         </table>
       </div>
       {selectedLead && (
-  <div className="popup">
-    <div className="popup-content">
-      <button className="popup-close" onClick={() => setSelectedLead(null)}>
-        X
-      </button>
-      <h2>{selectedLead.company_name}</h2>
-      <p>{selectedLead.person_name}</p>
-      <p>{selectedLead.company_website}</p>
-      <p>{selectedLead.company_address}</p>
-      <p>{selectedLead.email_address}</p>
-      <p>{selectedLead.telephone_numbers}</p>
-    </div>
-  </div>
-)}
+        <div className="popup">
+          <div className="popup-content">
+            <button className="popup-close" onClick={() => setSelectedLead(null)}>
+              X
+            </button>
+            <h2>{selectedLead.company_name}</h2>
+            <p>{selectedLead.person_name}</p>
+            <p>{selectedLead.company_website}</p>
+            <p>{selectedLead.company_address}</p>
+            <p>{selectedLead.email_address}</p>
+            <p>{selectedLead.telephone_numbers}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

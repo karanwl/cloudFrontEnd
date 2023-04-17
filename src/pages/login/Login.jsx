@@ -18,23 +18,30 @@ export default function Login() {
 
     // In fetch should be included the username and password in POST data
     try {
-      /*const response = await fetch("https://example.com/api/login", {
+      const response = await fetch("https://j0dvgoy2ze.execute-api.us-east-1.amazonaws.com/api/v1/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ username, password })
-      });*/
-
-      const response = await fetch("https://raw.githubusercontent.com/karanwl/cloudFrontEnd/main/datajson/login.json");
+      });
 
       const data = await response.json();
-
+      //alert(data.role);
+      
       // validate username and password, and perform authentication
       if (data.status === "ok" && data.msg === "Login Successful!") {
         // set session value in local storage
-        localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("username", username);
+        localStorage.setItem("isLoggedIn", "true");
+        if (data.role === "admin")
+        {
+          localStorage.setItem("isAdmin", "true");
+        }
+        else
+        {
+          localStorage.setItem("isAdmin", "false");
+        }
         // redirect to home page or some other authorized page
         window.location.href = "/";
       } else {
