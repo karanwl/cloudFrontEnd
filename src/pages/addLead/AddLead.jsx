@@ -1,4 +1,5 @@
 import "./AddLead.css"
+import React, { useState } from 'react';
 
 export default function AddLead(){
     const isLoggedIn = localStorage.getItem("isLoggedIn");
@@ -10,10 +11,26 @@ export default function AddLead(){
       window.location.href = "/";
     }
 
+    const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    setSelectedImage(file);
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // TODO: Handle the image upload here
+  }
+
     return(
       <div className="addleadcontent">
       <div className="form">
-        <form>
+        <form onSubmit={handleSubmit} ><div>
+        <label htmlFor="image-upload">Select an image:</label>
+        <input type="file" id="image-upload" onChange={handleImageUpload} accept="image/*" />
+      </div>
+      <button type="submit">Upload</button>
           <fieldset>
             <div>
           <label>
@@ -44,9 +61,10 @@ export default function AddLead(){
             </label></div>
           
           </fieldset>
-            <input type="submit" value="Submit" />
            
+            
         </form>
+        
 </div>
 </div>
     )
