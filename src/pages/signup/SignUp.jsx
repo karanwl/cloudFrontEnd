@@ -2,8 +2,17 @@ import React, { useState } from 'react';
 import './SignUp.css';
 
 export default function SignUp() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const isAdmin = localStorage.getItem("isAdmin");
+  const usernameSession = localStorage.getItem("username");
+    
+  if (isLoggedIn === false || isAdmin === null || isLoggedIn === null || usernameSession === null || isAdmin === "false") {
+    //alert("Invalid username or password.");
+    // redirect to home page or some other authorized page
+    window.location.href = "/";
+  }
+
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('user');
 
@@ -12,6 +21,40 @@ export default function SignUp() {
 
     // Here, you'll need to call your API to create a new user with the given username, email, password, and role.
     // After the user is created, you can show a success message or redirect to another page.
+    try {
+      const response = await fetch("https://j0dvgoy2ze.execute-api.us-east-1.amazonaws.com/api/v1/users", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({username: usernameSession, user_obj: {
+          username: username,
+          password: password,
+          role: role
+        }})
+      });
+
+      const data = await response.json();
+      
+      // validate if the image upload process is ok
+      if (data.status === "ok") {
+        if (data.user_obj)
+        {
+          // nothing
+         alert(data.msg)
+        }
+        else
+        {
+          alert("User Creation error:", data.msg)
+        }
+      } else {
+        alert("User Creation error:", data.msg)
+      }
+
+    } catch (error) {
+      console.log("User Creation error:", error);
+      alert("User Creation error. Please try again later.");
+    }
 
     console.log('User created:', { username, password, role });
   };

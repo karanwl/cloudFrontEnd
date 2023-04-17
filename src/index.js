@@ -44,7 +44,7 @@ const router = createBrowserRouter([
     element: <SignUp />,
   },
   {
-    path: "/viewlead",
+    path: "/viewlead/:id",
     element: <ViewLead />,
   }
 ]);

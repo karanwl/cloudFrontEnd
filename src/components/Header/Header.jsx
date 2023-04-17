@@ -18,7 +18,7 @@ export default function Header() {
           <a href="/addlead">Add Lead</a>
         ) : null}
 
-        {isLoggedIn && isAdmin ? (
+        {isLoggedIn && isAdmin && isAdmin === "true" ? (
           <a href="/signup">Create Account</a>
         ) : null}
 
