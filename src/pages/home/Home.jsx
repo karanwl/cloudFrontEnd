@@ -3,6 +3,7 @@ import "./Home.css";
 export default function Home() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   const usernameSession = localStorage.getItem("username");
+  const isAdmin = localStorage.getItem("isAdmin");
 
   return (
     <div className="home-content">
