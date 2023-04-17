@@ -1,17 +1,18 @@
 import React,{useState,useEffect} from 'react';
+import {useParams} from "react-router-dom";
+
 import "./ViewLead.css"
 
-export default function ViewLead({ id }){
+export default function ViewLead(){
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const usernameSession = localStorage.getItem("username");
-    
+    const { id } = useParams();
+    const [dataJson, setDataJson] = useState([]);
+
     if (isLoggedIn === false || isLoggedIn === null || usernameSession === null) {
-        //alert("Invalid username or password.");
         // redirect to home page or some other authorized page
         window.location.href = "/";
     }
-
-    const [dataJson, setDataJson] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -30,10 +31,12 @@ export default function ViewLead({ id }){
         <div className='viewlead-container'>
             <div className='viewlead-card'>
                 <h1>View Lead</h1>
-                <form className='signup-form'>
+                <form className='viewlead-form'>
+                    
+
                     <div className='form-group'>
-                        <label for="compName">Company Name:</label>
-                        <input type="text" name="compName" value={dataJson.company_name} readOnly />
+                        <label for="companyName">Company Name:</label>
+                        <input type="text" name="companyName" value={dataJson.company_name} readOnly />
                     </div>
                     <div  className='form-group'>
                         <label for="personName">Person Name:</label>
@@ -54,6 +57,10 @@ export default function ViewLead({ id }){
                     <div  className='form-group'>
                         <label for="phoneNumber">Phone Numbers:</label>
                         <input type="text" name="phoneNumber" value={dataJson.telephone_numbers} readOnly />
+                    </div>
+                    <div  className='form-group'>
+                        <label>Image:</label>
+                        {dataJson.image_filepath && <img src={dataJson.image_filepath} alt="Uploaded Image" width="250" height="250" />}
                     </div>
                 </form>
             </div>

@@ -38,8 +38,38 @@ export default function Leads() {
     window.location.href = `/editlead/${id}`;
   }
 
-  const handleDeleteLead = (id) => {
-    window.location.href = `/deletelead/${id}`;
+  const handleDeleteLead = async (id) => {
+    //window.location.href = `/deletelead/${id}`;
+
+    // TODO: Handle the image upload here
+    // In fetch should be included the filename anf filebytes in POST data
+    try {
+      const response = await fetch(`https://j0dvgoy2ze.execute-api.us-east-1.amazonaws.com/api/v1/leads/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({username: usernameSession})
+      });
+
+      const data = await response.json();
+      
+      // validate if the image upload process is ok
+      if (data.status === "ok") {
+        alert(data.msg);
+        // redirect to home page or some other authorized page
+        window.location.href = "/leads";
+      } else {
+        alert("Lead Delete error:", data.msg);
+        // redirect to home page or some other authorized page
+        window.location.href = "/leads";
+      }
+    } catch (error) {
+      console.log("Lead Delete error:", error);
+      alert("Lead Delete error. Please try again later.");
+      // redirect to home page or some other authorized page
+      window.location.href = "/leads";
+    }
   }
 
   return (

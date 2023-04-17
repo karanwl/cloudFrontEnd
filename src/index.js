@@ -36,7 +36,7 @@ const router = createBrowserRouter([
     element: <AddLead />,
   },
   {
-    path: "/editlead",
+    path: "/editlead/:id",
     element: <EditLead />,
   },
   {
