@@ -101,3 +101,20 @@ button:hover {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+
+.more-details-button {
+  background-color: rgb(48, 45, 45);
+  color: white;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.more-details-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 1px solid red;
+}

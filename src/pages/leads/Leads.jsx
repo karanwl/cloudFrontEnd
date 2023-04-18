@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Leads.css';
-import { FaEye, FaEdit, FaTrash } from 'react-icons/fa';
+import { FaEye, FaEdit, FaTrash , FaInfoCircle } from 'react-icons/fa';
 
 export default function Leads() {
   const isLoggedIn = localStorage.getItem('isLoggedIn');
@@ -40,6 +40,10 @@ export default function Leads() {
 
   const handleViewLead = (lead) => {
     setSelectedLead(lead);
+  };
+
+  const handleMainViewLead = (id) => {
+    window.location.href = `/viewlead/${id}`;
   };
 
   const handleEditLead = (id) => {
@@ -139,21 +143,28 @@ export default function Leads() {
           </tbody>
         </table>
       </div>
-      {selectedLead && (
-        <div className="popup">
-          <div className="popup-content">
-          <button className="popup-close" onClick={() => setSelectedLead(null)}>
-              X
-            </button>
-            <h2>{selectedLead.company_name}</h2>
-            <p>{selectedLead.person_name}</p>
-            <p>{selectedLead.company_website}</p>
-            <p>{selectedLead.company_address}</p>
-            <p>{selectedLead.email_address}</p>
-            <p>{selectedLead.telephone_numbers}</p>
-          </div>
-        </div>
-      )}
+      {
+  selectedLead && (
+    <div className="popup">
+      <div className="popup-content">
+        <button className="popup-close" onClick={() => setSelectedLead(null)}>
+          X
+        </button>
+        <h2>{selectedLead.company_name}</h2>
+        <p>{selectedLead.person_name}</p>
+        <p>{selectedLead.company_website}</p>
+        <p>{selectedLead.company_address}</p>
+        <p>{selectedLead.email_address}</p>
+        <p>{selectedLead.telephone_numbers}</p>
+        <button
+          className="more-details-button"
+          onClick={() => handleMainViewLead(selectedLead.id)}
+        >
+          <FaInfoCircle /> More Details
+        </button>
+      </div>
+    </div>
+  )}
     </div>
   );
 }
