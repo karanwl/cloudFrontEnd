@@ -35,7 +35,7 @@ export default function Leads() {
   };
 
   const filteredLeads = leads.filter((lead) =>
-    lead.person_name.toLowerCase().includes(searchQuery.toLowerCase())
+    lead.company_name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleViewLead = (lead) => {
