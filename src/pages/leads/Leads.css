@@ -1,7 +1,8 @@
 .leads-content {
   position: absolute;
   /* margin-top : 400px; */
-  padding:50px;
+  padding-top:800px;
+  padding-bottom:50px;
   top: 40%;
   left: 50%;
   transform: translate(-50%,-50%);
