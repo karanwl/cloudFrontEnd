@@ -179,7 +179,7 @@ export default function AddLead(){
         </form>
       </div>
 
-      {fileURL && <div  className='form-group'><label>Image:</label><img src={fileURL} alt="Uploaded Image" width="250" height="250" /></div>}
+      {fileURL && <div  className='form-group'><img src={fileURL} alt="Uploaded Image" width="250" height="250" /></div>}
 
       {fileId && <div className="form">
         <form onSubmit={handleSaveDynamoDBSubmit} className="form justify-content-center" >
