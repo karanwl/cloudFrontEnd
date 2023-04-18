@@ -1,6 +1,15 @@
 .leads-content {
   position: absolute;
-  margin: 49px;
+  /* margin-top : 400px; */
+  padding:50px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.leads-content h1{
+  text-align: center;
+  font-size: 5rem;
 }
 
 .body-button {
@@ -8,7 +17,7 @@
   color: white;
   border-radius: 12px;
   padding: 2%;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
@@ -19,7 +28,7 @@
 }
 
 .leads-table {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 table {

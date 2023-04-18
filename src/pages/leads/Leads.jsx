@@ -74,7 +74,7 @@ export default function Leads() {
 
   return (
     <div className="leads-content">
-      <h1>Leads List</h1>
+      <h1>List of Leads </h1>
       <a href="/addlead" className="body-button">
         Add new Lead
       </a>

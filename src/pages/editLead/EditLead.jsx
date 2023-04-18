@@ -79,6 +79,7 @@ export default function EditLead(){
         // validate if the image upload process is ok
         if (data.status === "ok") {
           alert(data.msg);
+          window.location.href = "/leads";
         } else {
           alert("Lead Update error:", data.msg)
         }

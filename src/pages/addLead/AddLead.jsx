@@ -152,7 +152,8 @@ export default function AddLead(){
           alert(data.msg)
           
           // redirect to view lead page
-          window.location.href = "/viewlead/" + data.lead_id.toString();
+          // window.location.href = "/viewlead/" + data.lead_id.toString();
+          window.location.href = "/leads";
         }
         else
         {
