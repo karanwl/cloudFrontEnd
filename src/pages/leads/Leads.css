@@ -89,3 +89,15 @@ button:hover {
   font-size: 1.2rem;
   cursor: pointer;
 }
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

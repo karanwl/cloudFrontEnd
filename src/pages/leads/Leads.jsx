@@ -1,42 +1,50 @@
 import React, { useState, useEffect } from 'react';
-import "./Leads.css";
+import './Leads.css';
 import { FaEye, FaEdit, FaTrash } from 'react-icons/fa';
 
 export default function Leads() {
-  const isLoggedIn = localStorage.getItem("isLoggedIn");
-  const usernameSession = localStorage.getItem("username");
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const usernameSession = localStorage.getItem('username');
 
   const [selectedLead, setSelectedLead] = useState(null);
+  const [leads, setLeads] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handlePopupClick = (event) => {
-      if (event.target === document.querySelector(".popup")) {
+      if (event.target === document.querySelector('.popup')) {
         setSelectedLead(null);
       }
     };
-  
-    document.addEventListener("click", handlePopupClick);
-  
+
+    document.addEventListener('click', handlePopupClick);
+
     return () => {
-      document.removeEventListener("click", handlePopupClick);
+      document.removeEventListener('click', handlePopupClick);
     };
   }, [selectedLead]);
-  
-  const [leads, setLeads] = useState([]);
 
   useEffect(() => {
-    fetch("https://j0dvgoy2ze.execute-api.us-east-1.amazonaws.com/api/v1/leads")
+    fetch('https://j0dvgoy2ze.execute-api.us-east-1.amazonaws.com/api/v1/leads')
       .then((response) => response.json())
       .then((data) => setLeads(data.leads_obj));
   }, []);
 
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredLeads = leads.filter((lead) =>
+    lead.person_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const handleViewLead = (lead) => {
     setSelectedLead(lead);
-  }  
+  };
 
   const handleEditLead = (id) => {
     window.location.href = `/editlead/${id}`;
-  }
+  };
 
   const handleDeleteLead = async (id) => {
     //window.location.href = `/deletelead/${id}`;
@@ -74,10 +82,21 @@ export default function Leads() {
 
   return (
     <div className="leads-content">
-      <h1>List of Leads </h1>
-      <a href="/addlead" className="body-button">
-        Add new Lead
-      </a>
+      <h1>List of Leads</h1>
+      <div className="action-container">
+        <a href="/addlead" className="body-button">
+          Add new Lead
+        </a>
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search by lead name"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            className="search-input"
+          />
+        </div>
+      </div>
       <div className="leads-table">
         <table>
           <thead>
@@ -92,7 +111,7 @@ export default function Leads() {
             </tr>
           </thead>
           <tbody>
-            {leads.map((lead) => (
+            {filteredLeads.map((lead) => (
               <tr key={lead.id}>
                 <td>{lead.company_name}</td>
                 <td>{lead.person_name}</td>
@@ -123,7 +142,7 @@ export default function Leads() {
       {selectedLead && (
         <div className="popup">
           <div className="popup-content">
-            <button className="popup-close" onClick={() => setSelectedLead(null)}>
+          <button className="popup-close" onClick={() => setSelectedLead(null)}>
               X
             </button>
             <h2>{selectedLead.company_name}</h2>
@@ -138,4 +157,3 @@ export default function Leads() {
     </div>
   );
 }
-
