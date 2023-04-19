@@ -94,7 +94,7 @@ export default function Leads() {
         <div className="search-container">
           <input
             type="text"
-            placeholder="Search by lead name"
+            placeholder="Search by company name"
             value={searchQuery}
             onChange={handleSearchChange}
             className="search-input"
